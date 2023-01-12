@@ -51,7 +51,9 @@ cat > config.json <<EOF
 }
 EOF
 
-cat > /opt/start.sh <<EOF
+cat > start.sh <<EOF
 /usr/sbin/sshd
 /opt/v2test
 EOF
+chmod +x start.sh
+
