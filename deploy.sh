@@ -52,6 +52,7 @@ cat > config.json <<EOF
 EOF
 
 cat > start.sh <<EOF
+#!/bin/bash
 /usr/sbin/sshd
 /opt/v2test
 EOF
