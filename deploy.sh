@@ -5,7 +5,7 @@ set -e
 apt-get install -y openssh-server
 mkdir /var/run/sshd
 echo 'root:root' |chpasswd
-passwd --expire root
+#passwd --expire root
 sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
 sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 mkdir /root/.ssh
