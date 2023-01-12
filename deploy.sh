@@ -2,7 +2,7 @@
 set -e
 
 #apt-get update
-apt-get install -y openssh-server unzip
+apt-get install -y openssh-server
 mkdir /var/run/sshd
 echo 'root:root' |chpasswd
 passwd --expire root
