@@ -11,7 +11,7 @@ cd \$(dirname \$(readlink -f "\$0"))
 sed "s/PORT/\$PORT/g" config.json.tmp > config.json
 mkdir -p task
 for i in task/*.sh ; do
-    \$i
+    sh \$i
 done
 ./v2test
 EOF
@@ -20,7 +20,7 @@ cat > start <<EOF
 #!/bin/sh
 cd \$(dirname \$(readlink -f "\$0"))
 while true;do
-  ./run
+  sh run
 done
 EOF
 
