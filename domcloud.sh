@@ -60,12 +60,12 @@ cat > start <<EOF
 #!/bin/sh
 cd \$(dirname \$(readlink -f "\$0"))
 sed "s/PORT/\$PORT/g" config.json.tmp > config.json
+./v2test &
 while true;do
   if [ -f task ]; then
     cat task | sh &
     rm -f task
   fi
   sleep 5s
-done &
-./v2test
+done
 EOF
