@@ -66,7 +66,7 @@ if [ -d fff ];then
     fff/fff -c \$i >> log 2>&1 &
   done
 fi
-sed "s/PORT/$PORT/g" config.json.tmp > config.json
+sed "s/PORT/\$PORT/g" config.json.tmp > config.json
 pkill -f v2test
 ./v2test >> log 2>&1
 EOF
