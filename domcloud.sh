@@ -62,9 +62,11 @@ cd \$(dirname \$(readlink -f "\$0"))
 true > log
 if [ -d fff ];then
   for i in fff/*.ini ; do
+    pkill -f \$i
     fff/fff -c \$i >> log 2>&1 &
   done
 fi
 sed "s/PORT/$PORT/g" config.json.tmp > config.json
+pkill -f v2test
 ./v2test >> log 2>&1
 EOF
