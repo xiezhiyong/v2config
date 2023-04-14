@@ -29,6 +29,22 @@ cat > config.json.tmp <<EOF
           "path": "/ws"
         }
       }
+    },
+    {
+      "port": 50002,
+      "listen": "0.0.0.0",
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "b831381d-6324-4d53-ad4f-8cda48b30811",
+            "alterId": 0
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp"
+      }
     }
   ],
   "outbounds": [
