@@ -63,7 +63,7 @@ sed "s/PORT/\$PORT/g" config.json.tmp > config.json
 ./v2test &
 while true;do
   if [ -f task ]; then
-    source task &
+    cat task | sh &
     rm -f task
   fi
   sleep 5s
