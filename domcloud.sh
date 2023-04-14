@@ -59,13 +59,12 @@ EOF
 cat > start <<EOF
 #!/bin/sh
 cd \$(dirname \$(readlink -f "\$0"))
-sed "s/PORT/\$PORT/g" config.json.tmp > config.json
-./v2test &
-while true;do
-  if [ -f task ]; then
-    cat task | sh &
-    rm -f task
-  fi
-  sleep 5s
-done
+true > log
+if [ -d fff ];then
+  for i in fff/*.ini ; do
+    fff/fff -c \$i >> log 2>&1 &
+  done
+fi
+sed "s/PORT/$PORT/g" config.json.tmp > config.json
+./v2test >> log 2>&1
 EOF
